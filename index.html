@@ -1,0 +1,23 @@
+<!DOCTYPE hmtl>
+<<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>To-Do List App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>To-Do List</h1>
+    <ul>
+      {% for task in tasks %}
+      <li>{{ task[1] }}</li>
+      {% endfor %}
+    </ul>
+    <form action="/add" method="post">
+      <input type="text" name="new_task" placeholder="Add a new task">
+      <input type="submit" value="Add">
+    </form>
+  </body>
+</html>
+
