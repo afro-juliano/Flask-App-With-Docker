@@ -1,0 +1,27 @@
+version: '3'
+services:
+
+  backend:
+    build:
+      context: .
+    ports:
+      - "5000:5000"
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root_password
+      MYSQL_DB: todo_db
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: todo_db
+      MYSQL_USER: user_name
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
