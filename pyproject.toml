@@ -12,6 +12,10 @@ python = "^3.11"
 flask = "^2.3.3"
 black = "^23.7.0"
 flake8 = "^6.1.0"
+flask-mysql = "^1.5.2"
+db = "^0.1.1"
+mysql-connector-python = "^8.1.0"
+mysql-connector = "^2.2.9"
 
 [build-system]
 requires = ["poetry-core"]

@@ -7,9 +7,9 @@ services:
     ports:
       - "5000:5000"
     environment:
-      MYSQL_HOST: mysql
+      MYSQL_HOST: mysql 
       MYSQL_USER: root
-      MYSQL_PASSWORD: root_password
+      MYSQL_PASSWORD: root@123
       MYSQL_DB: todo_db
     depends_on:
       - mysql
@@ -17,9 +17,10 @@ services:
   mysql:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_ROOT_PASSWORD: root@123
       MYSQL_DATABASE: todo_db
       MYSQL_USER: user_name
+      MYSQL_PASSWORD: user@123
     volumes:
       - mysql-data:/var/lib/mysql
 

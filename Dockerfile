@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.11
 
 RUN apt-get update \
     && apt-get upgrade -y \
@@ -10,12 +10,8 @@ WORKDIR /app
 COPY . .
 
 # Install app dependencies with poetry
-RUN poetry update \
-    && poetry shell \
-    && poetry add mysqlclient \
-    && poetry add black \
-    && poetry add flask \
-    && poetry add flask_mysqlb \
-    && poetry add flake8
+RUN pip install --upgrade pip \
+    && pip install mysqlclient \
+    && pip install -r requirements.txt
 
 CMD ["python", "app.py"]
