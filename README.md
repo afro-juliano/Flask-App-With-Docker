@@ -1,2 +1,18 @@
 # Flask-App-With-Docker
-This is a flask app dockerized, for training purposes
+This is a flask app dockerized, for training purposes and you should do as following to deploy
+this app.
+
+# 2 - Tier Flask Web Application
+It will be on two containers they will run our to-do app.
+
+* Container 1: Contains frontend and backend.
+* Container 2: Contains the database that will be running - MySQL, in this case.
+
+Our file structure will be:
+
+Flask-App-With-Docker (Project folder/directory name)
+  - app.py (backend)
+  - Dockerfile
+  - docker-compose.yml
+  - requirements.txt (Contains all the dependencies)
+  - 
