@@ -21,7 +21,7 @@ def index():
     cur.execute('SELECT * FROM tasks')
     tasks = cur.fetchall()
     cur.close()
-    return render_template('templates/index.html', tasks=tasks)
+    return render_template('index.html', tasks=tasks)
 
 
 @app.route('/add', methods=['POST'])
