@@ -19,4 +19,6 @@ Flask-App-With-Docker (Project folder/directory name)
   - index.html (Basic frontend, cause I don't really know how to do this things)
 
 # Now you should git clone this repo with:
+```
 git clone https://github.com/afro-juliano/Flask-App-With-Docker.git
+```
