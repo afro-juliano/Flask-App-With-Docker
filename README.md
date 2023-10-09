@@ -14,7 +14,7 @@ Flask-App-With-Docker (Project folder/directory name)
   - app.py (backend)
   - Dockerfile
   - docker-compose.yml
-  - requirements.txt (Contains all the dependencies)
+  - pyproject.toml (Contains all the dependencies)
   - templates (directory for the frontend)
   - index.html (Basic frontend, cause I don't really know how to do this things)
 
