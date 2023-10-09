@@ -5,13 +5,18 @@ RUN apt-get update \
     && apt-get install -y gcc default-libmysqlclient-dev pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app
+COPY /app /app
+COPY pyproject.toml poetry.lock /app
 
-COPY . .
+WORKDIR /app
+ENV PYTHONPATH=${PYTHONPATH}:${PWD}
 
 # Install app dependencies with poetry
-RUN pip install --upgrade pip \
-    && pip install mysqlclient \
-    && pip install -r requirements.txt
+RUN pip3 install --upgrade pip \
+    && pip3 install mysqlclient \
+    && pip3 install poetry
+
+RUN poetry config virtualenvs.create false
+RUN poetry install --no-dev
 
 CMD ["python", "app.py"]
